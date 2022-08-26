@@ -1,0 +1,12 @@
+{
+    "Materials":
+    [
+      "iron_dust",
+      "washed_iron_dust"
+    ],
+    "EnergyUseBlocks":
+    [
+        "heat_coil",
+        "new_bee_blush"
+    ]
+}
