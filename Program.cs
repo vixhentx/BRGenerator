@@ -8,9 +8,29 @@ using System.Linq;
 
 
 Console.WriteLine("This is BRG!");
+
+if(args.Length <=0 )
+{
+    Functions.showHelp();
+    return;
+}
+
 #region const
 string json =Path.Combine(Directory.GetCurrentDirectory(),"BRconfig.json");
 #endregion const
 JObject jsonObject = (JObject)JToken.ReadFrom(new JsonTextReader(File.OpenText(json)));
 
-Functions.genMaterialItems(jsonObject);
+switch (args[0].ToLower())
+{
+    case "materials":
+    {
+            Functions.genMaterialItems(jsonObject);
+            Console.WriteLine("完成生成materials");
+            break;
+    }
+    default:
+    {
+            Functions.showHelp();
+            break;
+    }
+}
